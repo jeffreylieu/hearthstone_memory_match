@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+
+
+    <title>Memory Match</title>
+</head>
+<body class="container">
+<header class="HeaderContainer">
+    <!--Game logo-->
+
+    <h1 align="center"><img class="center" src="cards/hearthstonelogo.png"></h1>
+
+    <h4>Settings</h4><!--settings link (links to no where yet)-->
+    <h4>About Link</h4><!--About Link (links to a page with a description of the game and what you did in it)-->
+</header>
+
+<form id="resetGame">
+    <div class="StatsContainer, col-sm-2">
+        <!--games played-->
+        <div class= "games-played">
+            <h3>Stats:</h3>
+            <div class="label">Games Played</div>
+            <div class="value">0</div>
+        </div>
+        <!--Attempts-->
+        <div class="attempts">
+            <div class="label">Attempts</div>
+            <div class="value">0</div>
+        </div>
+
+        <!--Accurancy-->
+        <div class="accuracy">
+            <div class="label">Accuracy</div>
+            <div class="value">0</div>
+        </div>
+
+        <button class="reset" onclick="resetButton()" value="Reset Game">Reset Game</button>
+    </div>
+
+    <!--Game area where the cards are located -->
+    <div class="game-area col-sm-10">
+        <div class="row">
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  <!--" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >--->
+                <div class="card"><!--card1---><!--use for flipper-->
+                    <div class="front"><img src="cards/genn.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card2--->
+                    <div class="front"><img src="cards/snapfreeze.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card3--->
+                    <div class="front"><img src="cards/snapfreeze.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  <!--" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >--->
+                <div class="card"><!--card1---><!--use for flipper-->
+                    <div class="front"><img src="cards/genn.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card2--->
+                    <div class="front"><img src="cards/mal.gif"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card3--->
+                    <div class="front"><img src="cards/mal.gif"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  <!--" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >--->
+                <div class="card"><!--card1---><!--use for flipper-->
+                    <div class="front"><img src="cards/deathwing.gif"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card2--->
+                    <div class="front"><img src="cards/deathwing.gif"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card3--->
+                    <div class="front"><img src="cards/darius.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  <!--" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >--->
+                <div class="card"><!--card1---><!--use for flipper-->
+                    <div class="front"><img src="cards/darius.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card2--->
+                    <div class="front"><img src="cards/hagatha.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card3--->
+                    <div class="front"><img src="cards/hagatha.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+        </div> <!------>
+        <div class="row">
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  <!--" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >--->
+                <div class="card"><!--card1---><!--use for flipper-->
+                    <div class="front"><img src="cards/lich.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card2--->
+                    <div class="front"><img src="cards/silversword.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card3--->
+                    <div class="front"><img src="cards/silversword.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2">  <!--" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >--->
+                <div class="card"><!--card1---><!--use for flipper-->
+                    <div class="front"><img src="cards/soulthief.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card2--->
+                    <div class="front"><img src="cards/soulthief.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+            <div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   <!--ontouchstart="this.classList.toggle('click');"---->
+                <div class="card"><!--card3--->
+                    <div class="front"><img src="cards/lich.png"></div>
+                    <div class="back"><img src="cards/cardback.png"></div>
+                </div>
+            </div>
+        </div> <!------>
+    </div><!---card container-->
+    <div id="modalShadow">
+        <div id="modalBody"><img class="center" src="cards/win.jpeg"></div>
+    </div>
+</form>
+</body>
+</html>
