@@ -162,7 +162,7 @@ function showModal(){
 //
 //* work on modal
 function removingModal(){
-    debugger;
+
     $('#modalShadow').css("display", "none");
     // document.querySelector("#modalShadow").style.display = "none";
     // document.getElementById("resetGame").reset();
