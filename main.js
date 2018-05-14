@@ -148,10 +148,10 @@ function reset_stats(){
 function displayStats(){
     $('.games-played .value').text(games_played);
     $('.attempts .value').text(attempts);
-    accuracy = match_counter/attempts;
-    accuracy++;
-    var accuracyTruncated = accuracy.toFixed(2);
+    accuracy = ((match_counter/attempts) *100);
+    var accuracyTruncated = accuracy.toFixed();
     $('.accuracy .value').text(accuracyTruncated + '%');
+    accuracy++;
 }
 
 function showModal(){
