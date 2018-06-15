@@ -31,7 +31,7 @@ function resetButton(){
 }
 
 function card_clicked(){
-    if(cardsCanBeClicked === false){
+    if(!cardsCanBeClicked || $(this).find('.back').hasClass('reveal')){
         return;
     }
     console.log(this);
@@ -162,7 +162,7 @@ function showModal(){
 //
 //* work on modal
 function removingModal(){
-    debugger;
+
     $('#modalShadow').css("display", "none");
     // document.querySelector("#modalShadow").style.display = "none";
     // document.getElementById("resetGame").reset();
