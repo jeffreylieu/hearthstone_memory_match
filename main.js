@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 9;
+var total_possible_matches = 3;
 var match_counter = 0;
 var firstImage = null;
 var secondImage = null;
@@ -16,7 +16,9 @@ var games_played = 0;
 
 function initializeApp() {
     games_played = 0;
+    createGameArea();
     addEventListener();
+
 }
 
 
@@ -28,6 +30,48 @@ function resetButton(){
     document.getElementById("resetGame").reset();
     replaceImages(newcards);
     displayStats();
+}
+
+
+function createGameArea(img){
+
+    var images =['cards/blinkfox.png', 'cards/mal.gif', 'cards/darius.png', 'cards/genn.png', 'cards/hagatha.png', 'cards/lich.png', 'cards/silversword.png', 'cards/snapfreeze.png', 'cards/deathwing.gif'];
+
+    var allCards = shuffleCards(images);
+
+    // var frontImage = $("<img>").addClass('frontImage');
+    // var backImage = $("<img>").addClass('backImage');
+
+    // $('game-area').append(row, col);
+
+    for(var gameIndex = 0; gameIndex < 3; gameIndex++){
+        // var row = $("<div>").addClass('row');
+        // $('.game-area').append(row);
+        for (var imageIndex = 0; imageIndex < 6; imageIndex++){
+
+            var card = $("<div>").addClass('card');
+            var front = $("<div>").addClass('front');
+            var back = $("<div>").addClass('back');
+            var frontImage = $("<img>").attr('src', allCards.pop());
+            $(card).append(front, back);
+            $(front).append(frontImage);
+            $(back).append("<img src='cards/cardback.png'/>");
+
+            // $(row).append(card);
+            $('.game-area').append(card);
+
+        }
+    }
+
+    //need row, col, card, front div , back div, front image, back image,
+
+/// for loop running 3times
+    //create rows
+    //for loop in previous for loop running 6 times
+        //create cards
+        //add card to row
+    //add row to game-area
+
 }
 
 function card_clicked(){
@@ -69,8 +113,6 @@ function card_clicked(){
                 console.log('go back');
                 first_card_clicked = null;
                 second_card_clicked = null;
-
-
 
             }
         } else {
@@ -116,7 +158,6 @@ function totalReset(){
 }
 
 
-var images =['cards/blinkfox.png', 'cards/mal.gif', 'cards/darius.png', 'cards/genn.png', 'cards/hagatha.png', 'cards/lich.png', 'cards/silversword.png', 'cards/snapfreeze.png', 'cards/deathwing.gif'];
 
 function shuffleCards(cards) {
     var tempCards = cards.concat(cards);
@@ -159,8 +200,7 @@ function showModal(){
     displayStats();
     setTimeout(resetWin, 2000);
 }
-//
-//* work on modal
+
 function removingModal(){
 
     $('#modalShadow').css("display", "none");
@@ -168,4 +208,3 @@ function removingModal(){
     // document.getElementById("resetGame").reset();
     // replaceImages(newcards);
 }
-// remember dominos as a way to organize functions
