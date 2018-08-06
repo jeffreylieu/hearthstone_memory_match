@@ -2,111 +2,159 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <script type="text/javascript"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <title>Memory Match</title>
-    <style>
-        /*<!--style sheet-->*/
-    </style>
 </head>
-<body>
+<body class="container">
 <header class="HeaderContainer">
     <!--Game logo-->
-    <h1>Matching Murlocs</h1>
-    <h4>Settings</h4><!--settings link (links to no where yet)-->
-    <h4>About Link</h4><!--About Link (links to a page with a description of the game and what you did in it)-->
+    <h1 align="center"><img class="center" src="cards/hearthstonelogo.png"></h1>
 </header>
-
-
-<!---make into a column--->
-<!--<div class="container">-->
-<div class="StatsContainer">
-    <!--games played-->
-    <div class="col-sm-2">
+    <div class="StatsContainer, col-sm-2">
+        <h4>Settings</h4><!--settings link (links to no where yet)-->
+        <h4>About Link</h4><!--About Link (links to a page with a description of the game and what you did in it)-->
+        <!--games played-->
         <div class= "games-played">
             <h3>Stats:</h3>
             <div class="label">Games Played</div>
-            <div class="value"></div>
+            <div class="value">0</div>
         </div>
         <!--Attempts-->
         <div class="attempts">
             <div class="label">Attempts</div>
-            <div class="value"></div>
+            <div class="value">0</div>
         </div>
-
         <!--Accurancy-->
         <div class="accuracy">
-            <div class="label">Accuracy</div>
-            <div class="value"></div>
+            <div class="label">Accurate Wins</div>
+            <div class="value">0</div>
         </div>
-        <button class="reset">Reset Game</button>
+
+        <button class="reset"  value="Reset Game">Reset Game</button>
     </div>
-</div>
-
-<!--Game area where the cards are located -->
-<!--look up bootstrap grid system and flex box 3 columns with 6 rows-->
-
-<div class="col-sm-10">
-    <div id="game-area">
-        <div class="row">
-            <div class="card col-sm-2"> <!--card1--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card2--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card3--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card4--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card5--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card6--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card6--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card6--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card6--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card6--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card6--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-            <div class="card col-sm-2"> <!--card6--->
-                <div class="front"><img src="https://assets.webn.mobi/hearthstone/e00ba23685daa4cb93bf83261b9233ba66a093cb3b5e7f6da985294f62e42d6c.png"></div>
-                <div class="back"><img src="https://d2q63o9r0h0ohi.cloudfront.net/images/the-witchwood/gallery-cardback-c21df259f08ea2b56b069d9e529306884f9b51e288a31a7f8e6b0267b0f826ed111a30dd31fc45a97b506b54fed749219d69073e4faba2896163b5e5c1e535a8.png"></div>
-            </div>
-        </div>
-        <!--<div class="col-sm-1">-->
-
+    <!--onclick="resetButton()" this went before value-->
+    <!--Game area where the cards are located -->
+    <div class="game-area">
+        <!--<div class="row">-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  &lt;!&ndash;" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >-&ndash;&gt;-->
+                <!--<div class="card col-sm-2">&lt;!&ndash;card1-&ndash;&gt;&lt;!&ndash;use for flipper&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/genn.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card2-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/snapfreeze.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card3-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/snapfreeze.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  &lt;!&ndash;" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >-&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card1-&ndash;&gt;&lt;!&ndash;use for flipper&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/genn.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card2-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/mal.gif"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card3-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/mal.gif"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  &lt;!&ndash;" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >-&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card1-&ndash;&gt;&lt;!&ndash;use for flipper&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/deathwing.gif"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card2-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/deathwing.gif"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card3-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/darius.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  &lt;!&ndash;" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >-&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card1-&ndash;&gt;&lt;!&ndash;use for flipper&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/darius.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card2-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/hagatha.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card3-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/hagatha.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div> &lt;!&ndash;&#45;&#45;&ndash;&gt;-->
+        <!--<div class="row">-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">  &lt;!&ndash;" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >-&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card1-&ndash;&gt;&lt;!&ndash;use for flipper&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/lich.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card2-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/silversword.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card3-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/silversword.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2">  &lt;!&ndash;" maybe take out ontouchstart="this.classList.toggle('click');" flip-container" >-&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card1-&ndash;&gt;&lt;!&ndash;use for flipper&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/soulthief.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card2-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/soulthief.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-sm-2" ontouchstart="this.classList.toggle('click');">   &lt;!&ndash;ontouchstart="this.classList.toggle('click');"&#45;&#45;&ndash;&gt;-->
+                <!--<div class="card">&lt;!&ndash;card3-&ndash;&gt;-->
+                    <!--<div class="front"><img src="cards/lich.png"></div>-->
+                    <!--<div class="back"><img src="cards/cardback.png"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div> &lt;!&ndash;&#45;&#45;&ndash;&gt;-->
+    </div><!---card container-->
+    <div id="modalShadow">
+        <div id="modalBody"><img class="center" src="cards/win.jpeg"></div>
     </div>
-
-    <!--</div>-->
-</div>
-</div>
 </body>
 </html>
