@@ -24,12 +24,14 @@ function initializeApp() {
 
 function addEventListener() {
     $(".card").click(card_clicked);
+    $(".reset").click(resetWin);
+
 }
 
-function resetButton(){
-    document.getElementById("resetGame").reset();
-    replaceImages(newcards);
-    displayStats();
+function resetButton(newcards){
+    //replaceImages(newcards);
+    reset_stats();
+    //document.getElementById("resetGame").reset();
 }
 
 
@@ -62,15 +64,6 @@ function createGameArea(img){
 
         }
     }
-
-    //need row, col, card, front div , back div, front image, back image,
-
-/// for loop running 3times
-    //create rows
-    //for loop in previous for loop running 6 times
-        //create cards
-        //add card to row
-    //add row to game-area
 
 }
 
@@ -120,6 +113,7 @@ function card_clicked(){
             setTimeout(resetNonMatching, 2000);
             //* reset game completely?
             console.log('they do not match');
+            attempts++;
 
         }
         displayStats();
@@ -135,9 +129,13 @@ function resetWin() {
     first_card_clicked = null;
     second_card_clicked = null;
     cardsCanBeClicked = true;
-    var newcards = shuffleCards(images);
+    resetButton(); //calling before shufflecards is called
+    //var newcards = shuffleCards(images);
     match_counter = 0;
-    replaceImages(newcards);
+    //replaceImages(newcards);
+    $('.game-area').empty();
+    createGameArea();
+    $(".card").click(card_clicked);
 }
 
 
@@ -171,8 +169,8 @@ function shuffleCards(cards) {
 }
 
 function replaceImages(shuffledCards) {
+    debugger;
     var cardFronts = $('.front img');
-
     for (var card = 0; card < shuffledCards.length; card++) {
         $(cardFronts[card]).attr('src', shuffledCards[card]);
     }
@@ -181,7 +179,10 @@ function reset_stats(){
     accuracy = 0;
     matches = 0;
     attempts = 0;
-    displayStats();
+    // displayStats();
+    $('.games-played .value').text(games_played);
+    $('.attempts .value').text(attempts);
+    $('.accuracy .value').text(accuracy);
 
 }
 
@@ -208,3 +209,8 @@ function removingModal(){
     // document.getElementById("resetGame").reset();
     // replaceImages(newcards);
 }
+
+
+
+/// call resetButton before shufflecards to pass newCards through resetButton(newcards){
+//     replaceImages(newcards);

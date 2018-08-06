@@ -46,7 +46,7 @@ h1{
 .game-area{
     display: flex;
     flex-wrap: wrap;
-    height: 72vh;
+    height: 100vh;
     /*background-color: red;*/
 
 }
