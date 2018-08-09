@@ -59,13 +59,14 @@ function createGameArea(img){
 }
 
 function card_clicked(){
-    if(!cardsCanBeClicked || $(this).find('.back').hasClass('reveal')){
+    if(!cardsCanBeClicked || $(this).hasClass('reveal')){
         return;
     }
     console.log(this);
     $(this).addClass('reveal');
     if(first_card_clicked === null){
         first_card_clicked = $(this);
+
         return;
     } else {
         second_card_clicked = $(this);
@@ -82,11 +83,13 @@ function card_clicked(){
             attempts++;
             $('.attempts .value').text(attempts);
 
+
             if (match_counter === total_possible_matches) { //problem area
                 games_played++;
                 $('.attempts .value').text(attempts);
                 showModal();
-                setTimeout(resetWin, 2000);
+                // $('.card').removeClass('reveal');
+                //setTimeout(resetWin, 5000);
 
 
             } else {
@@ -108,19 +111,16 @@ function card_clicked(){
 }
 
 function resetWin(newcards) {
-    $('.card').removeClass('reveal');
+    // $('.card').removeClass('reveal');
     removingModal();
-    // $('.card').find('.back').removeClass('reveal');
-    $(second_card_clicked).find('.back').removeClass('reveal');
+   // $(second_card_clicked).find('.back').removeClass('reveal');
     first_card_clicked = null;
     second_card_clicked = null;
     cardsCanBeClicked = true;
     reset_stats(); //calling before shufflecards is called
     match_counter = 0;
     replaceImages(newcards);
-    $('.game-area').empty();
-    createGameArea();
-    $(".card").click(card_clicked);
+    totalReset();
 
 }
 
@@ -135,7 +135,10 @@ function resetNonMatching(){
 
 function totalReset(){
     console.log('reset working');
-    $('.card').removeClass('reveal');
+
+    $('.game-area').empty();
+    createGameArea();
+    $(".card").click(card_clicked);
 }
 
 
@@ -166,7 +169,6 @@ function reset_stats(){
     $('.accuracy .value').text(accuracy);
 }
 
-
 function displayStats(){
     $('.games-played .value').text(games_played);
     $('.attempts .value').text(attempts);
@@ -179,14 +181,18 @@ function displayStats(){
 function showModal(){
     document.querySelector("#modalShadow").style.display = "block";
     displayStats();
+    setTimeout(function () {
+        $('.card').removeClass('reveal');
+
+    }, 1500);
+
     setTimeout(resetWin, 2000);
 }
 
 function removingModal(){
     $('#modalShadow').css("display", "none");
+
 }
 
 
 
-/// call resetButton before shufflecards to pass newCards through resetButton(newcards){
-//     replaceImages(newcards);
