@@ -71,9 +71,7 @@ function card_clicked(){
         second_card_clicked = $(this);
         firstImage = first_card_clicked.find('.front img').attr('src');
         secondImage = second_card_clicked.find('.front img').attr('src');
-        // secondImage = null;
-        // console.log('First Card IMG:', first_card_clicked.find('.front img').attr('src'));
-        // console.log('Second Card IMG:', second_card_clicked.find('.front img').attr('src'));
+
 
         if (firstImage === secondImage) {
             match_counter = match_counter +1;
@@ -100,7 +98,6 @@ function card_clicked(){
         } else {
             cardsCanBeClicked = false;
             setTimeout(resetNonMatching, 2000);
-            //* reset game completely?
             console.log('they do not match');
             attempts++;
 
@@ -119,7 +116,6 @@ function resetWin(newcards) {
     second_card_clicked = null;
     cardsCanBeClicked = true;
     reset_stats(); //calling before shufflecards is called
-    //var newcards = shuffleCards(images);
     match_counter = 0;
     replaceImages(newcards);
     $('.game-area').empty();
