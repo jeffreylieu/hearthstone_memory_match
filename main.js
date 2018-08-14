@@ -88,9 +88,6 @@ function card_clicked(){
                 games_played++;
                 $('.attempts .value').text(attempts);
                 showModal();
-                // $('.card').removeClass('reveal');
-                //setTimeout(resetWin, 5000);
-
 
             } else {
                 console.log('They match!!');
@@ -196,3 +193,4 @@ function removingModal(){
 
 
 
+// add level difficulty and challenges
