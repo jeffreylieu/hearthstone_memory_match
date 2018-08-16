@@ -50,7 +50,8 @@ function createGameArea(img){
             var frontImage = $("<img>").attr('src', allCards.pop());
             $(card).append(front, back);
             $(front).append(frontImage);
-            $(back).append("<img src='cards/cardback.png'/>");
+            // $(back).append("<img src='cards/cardback.png'/>");
+            $(back).append("<img src='cards/luxcard.gif'/>");
             $('.game-area').append(card);
 
         }
@@ -188,7 +189,6 @@ function showModal(){
 
 function removingModal(){
     $('#modalShadow').css("display", "none");
-
 }
 
 
