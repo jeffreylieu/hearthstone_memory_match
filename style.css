@@ -3,7 +3,6 @@ body{
     background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
-    height: 100vh;
     font-family: 'Asul', sans-serif;
     text-shadow: 4px 4px saddlebrown;
 
@@ -28,12 +27,18 @@ img.logoCenter{
 h1{
     height: 21vh;
 }
-.HeaderContainer, h1, h3, h4{
+.HeaderContainer, h3, h1{
     font-family: 'Asul', sans-serif;
     text-shadow: 4px 4px saddlebrown;
     color: gold;
     font-size: 35px;
 
+}
+h4{
+    font-family: 'Asul', sans-serif;
+    text-shadow: 4px 4px saddlebrown;
+    color: gold;
+    font-size: 25px;
 }
 /*--------------------*/
 
@@ -59,7 +64,7 @@ h1{
     font-family: 'Asul', sans-serif;
     text-shadow: 4px 4px saddlebrown;
     color: gold;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 /*.reset{*/
