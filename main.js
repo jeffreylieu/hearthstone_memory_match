@@ -51,7 +51,7 @@ function createGameArea(img){
             $(card).append(front, back);
             $(front).append(frontImage);
             // $(back).append("<img src='cards/cardback.png'/>");
-            $(back).append("<img src='cards/luxcard.gif'/>");
+            $(back).append("<img src='cards/luxcard.gif' class='gameCards'/>");
             $('.game-area').append(card);
 
         }

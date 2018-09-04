@@ -52,6 +52,7 @@ h4{
 
 .StatsContainer, .col-sm-2{
     text-align: center;
+    margin: auto;
 }
 
 .games-played, .attempts, .accuracy, .value {
@@ -119,12 +120,12 @@ button, html [type=button], [type=reset], [type=submit] {
 .card {
     margin: 5px;
     display: flex;
-    width: 15%;
+    width: 14%;
     transition: 0.6s;
     transform-style: preserve-3d;
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
 }
-.card:hover{
+.gameCards:hover{
     position: relative;
     box-shadow: 0px -15px 20px 9px gold;
     border-radius: 10px;
@@ -141,7 +142,7 @@ button, html [type=button], [type=reset], [type=submit] {
 }
 .front img:hover{
     position: relative;
-    box-shadow: 0px -15px 20px 9px gold;
+    /*box-shadow: 0px -15px 20px 9px gold;*/
     border-radius: 10px;
 }
 .front img, .back img {
@@ -199,12 +200,124 @@ img{
 
 
 /*------------media queries----------------*/
+@media (max-width: 1024px) and (orientation: landscape){
+    .label{
+        font-size: 19px;
+    }
+
+}
 
 @media (max-width: 992px){
     .card {
         margin: 5px;
         display: flex;
-        width: 30%;
+        width: 15%;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
+    }
+    .label{
+        font-size: 16px;
+    }
+    .gameCards:hover{
+        position: relative;
+        box-shadow: 0px -15px 20px 9px gold;
+        border-radius: 10px;
+    }
+
+    /*--------------------*/
+
+    .front, .back{
+        /*position: absolute;*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        backface-visibility: hidden;
+    }
+    .front img:hover{
+        position: relative;
+        box-shadow: 0px -15px 20px 9px gold;
+        border-radius: 10px;
+    }
+    .front img, .back img {
+        width: 100%;
+    }
+
+
+    .back {
+        position: absolute;
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+
+    .front {
+        transform: rotateY(180deg);
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-grab.png) 10 2, auto;
+    }
+
+    img{
+        vertical-align: middle;
+        /*height: 100%;*/
+    }
+
+    .reveal{
+        transform: rotateY(180deg);
+    }
+
+    /*flip-container*/
+    .col-sm-2{
+        height: 80%;
+        perspective: 1000px;
+    }
+
+    #modalShadow{
+        position: fixed;
+        left:0;
+        top:0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.4);
+        display: none;
+    }
+    #modalBody{
+        justify-content: center;
+        display: flex;
+        height: 70%;
+        /*position: fixed;*/
+        /*transform: translate(-50%, -50%);*/
+    }
+
+    .center{
+        position: absolute;
+        height: 57%;
+        top: 30%;
+    }
+    [class*="col-"] {
+        width: 20%;
+    }
+    .games-played, .attempts, .accuracy, .value {
+        font-family: 'Asul', sans-serif;
+        text-shadow: 4px 4px saddlebrown;
+        color: gold;
+        font-size: 18px;
+    }
+    .HeaderContainer, h1, h3, h4 {
+        font-family: 'Asul', sans-serif;
+        text-shadow: 4px 4px saddlebrown;
+        color: gold;
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 992px) and (orientation: landscape){
+    /*.gamebox{*/
+        /*display: flex;*/
+        /*flex-direction: row;*/
+    /*}*/
+    .card {
+        margin: 5px;
+        display: flex;
+        width: 15%;
         transition: 0.6s;
         transform-style: preserve-3d;
         cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
@@ -289,13 +402,96 @@ img{
         font-family: 'Asul', sans-serif;
         text-shadow: 4px 4px saddlebrown;
         color: gold;
-        font-size: 50px;
+        font-size: 18px;
     }
     .HeaderContainer, h1, h3, h4 {
         font-family: 'Asul', sans-serif;
         text-shadow: 4px 4px saddlebrown;
         color: gold;
         font-size: 45px;
+    }
+}
+
+
+
+@media (max-width: 767px){
+    .HeaderContainer {
+        height: 16vh;
+    }
+
+    .gamebox{
+        display: flex;
+        flex-direction: row;
+    }
+    .col-sm-2{
+        width: fit-content;
+        height: 20%;
+        perspective: 1000px;
+    }
+    h4, h3{
+        font-size: 16px;
+    }
+    .label{
+        font-size: 16px;
+    }
+    .value{
+        font-size: 30px;
+    }
+    h1{
+        height: 15vh;
+    }
+}
+
+@media (max-width: 736px)  and (orientation: landscape){
+    .HeaderContainer {
+        height: 16vh;
+    }
+    .gamebox{
+        display: flex;
+        flex-direction: row;
+    }
+    .col-sm-2{
+        width: fit-content;
+        height: 28%;
+        perspective: 1000px;
+    }
+    h4, h3{
+        font-size: 16px;
+    }
+    .label{
+        font-size: 16px;
+    }
+    .value{
+        font-size: 30px;
+    }
+    h1{
+        height: 15vh;
+    }
+}
+
+@media (max-width: 414px){
+    .HeaderContainer {
+        height: 16vh;
+    }
+    .gamebox{
+        display: flex;
+        flex-direction: row;
+    }
+    .col-sm-2{
+        height: 18%;
+        perspective: 1000px;
+    }
+    h4, h3{
+        font-size: 16px;
+    }
+    .label{
+        font-size: 16px;
+    }
+    .value{
+        font-size: 30px;
+    }
+    h1{
+        height: 15vh;
     }
 }
 
