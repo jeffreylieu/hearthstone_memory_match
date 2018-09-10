@@ -15,16 +15,21 @@ var games_played = 0;
 
 
 function initializeApp() {
+
     games_played = 0;
     createGameArea();
     addEventListener();
-
+    $('.enter_link').click(function() {
+        $(this).parent().fadeOut(500);
+        $('.hiddengame').removeClass('hiddengame');
+    });
 }
 
 
 function addEventListener() {
     $(".card").click(card_clicked);
     $(".reset").click(resetButton);
+
 
 }
 

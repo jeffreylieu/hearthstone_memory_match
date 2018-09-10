@@ -6,19 +6,29 @@
     <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
     <link href="https://fonts.googleapis.com/css?family=Asul:400,700" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
-
-
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <title>Memory Match</title>
 </head>
+
 <body class="container">
-<header class="HeaderContainer">
+<!--splash screen--->
+<div id="splashscreen">
+    <div class="splashimage">
+        <div class="splashlogo">
+            <img src="cards/hearthstonelogo.png"/>
+        </div>
+        <a href="#" class="enter_link">START GAME</a>
+    </div>
+</div>
+
+<!--main content-->
+<header class="HeaderContainer hiddengame">
     <!--Game logo-->
     <h1 align="center"><img class="logoCenter" src="cards/hearthstonelogo.png"></h1>
 </header>
-    <div class="StatsContainer, col-sm-2">
+    <div class="StatsContainer col-sm-2 hiddengame">
         <div class="gamebox">
         <!--<h4>Settings</h4>&lt;!&ndash;settings link (links to no where yet)&ndash;&gt;-->
         <!--<h4>About Link</h4>&lt;!&ndash;About Link (links to a page with a description of the game and what you did in it)&ndash;&gt;-->
@@ -43,7 +53,7 @@
     </div>
     <!--onclick="resetButton()" this went before value-->
     <!--Game area where the cards are located -->
-    <div class="game-area">
+    <div class="game-area hiddengame">
        <!--cards populate here-->
     </div>
     <div id="modalShadow">
