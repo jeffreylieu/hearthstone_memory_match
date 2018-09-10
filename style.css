@@ -13,6 +13,35 @@ body{
     /*src: url(fonts/OPTIBelwe-Medium.otf) format('otf');*/
 /*}*/
 
+#splashscreen {
+    background-image: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/01/hearthstone-deck.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    /*top:0;*/
+    /*left:0;*/
+    /*bottom:0;*/
+    /*width:100%;*/
+    /*background-color:yellow;*/
+    font-size: 40px;
+    text-align: center;
+}
+
+.splashimage{
+    vertical-align: middle;
+    height: 33vh;
+}
+
+.splashlogo{
+    height: 44vh;
+}
+
+.enter_link{
+    color: white;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-cursor.png) 10 2, auto;
+    font-size: 80px;
+}
+
+
 img.logoCenter{
     height: 105%;
 }
@@ -412,7 +441,9 @@ img{
     }
 }
 
-
+.hiddengame, .center{
+    display: none;
+}
 
 @media (max-width: 767px){
     .HeaderContainer {
