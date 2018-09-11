@@ -20,8 +20,9 @@ function initializeApp() {
     createGameArea();
     addEventListener();
     $('.enter_link').click(function() {
-        $(this).parent().fadeOut(500);
-        $('.hiddengame').removeClass('hiddengame');
+        $(this).parent().fadeOut(1000, function() {
+            $('.hiddengame').removeClass('hiddengame');
+        });
     });
 }
 
@@ -123,8 +124,7 @@ function resetWin(newcards) {
     reset_stats(); //calling before shufflecards is called
     match_counter = 0;
     replaceImages(newcards);
-    totalReset();
-
+    setTimeout(totalReset, 2000);
 }
 
 
