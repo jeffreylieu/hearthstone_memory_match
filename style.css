@@ -262,7 +262,6 @@ img{
     }
     .front img:hover{
         position: relative;
-        box-shadow: 0px -15px 20px 9px gold;
         border-radius: 10px;
     }
     .front img, .back img {
