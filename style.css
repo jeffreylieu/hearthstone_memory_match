@@ -1,21 +1,14 @@
 body{
-    /*background-image: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/01/hearthstone-deck.jpg");*/
     background-image: url("cards/hearthstonebkgrd.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: repeat;
     font-family: 'Asul', sans-serif;
     text-shadow: 4px 4px saddlebrown;
-
 }
-/*ask about this....site = http://opti.netii.net/fonts-b/index.html */
-/*@font-face{*/
-    /*font-family: hearthstonefont;*/
-    /*src: url(fonts/OPTIBelwe-Medium.otf) format('otf');*/
-/*}*/
+
 
 #splashscreen {
-    /*background-image: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/01/hearthstone-deck.jpg");*/
     background-image: url("cards/hearthstonebkgrd.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -44,6 +37,7 @@ img.logoCenter{
 }
 .container{
     height: 100vh;
+    width: auto;
 }
 .HeaderContainer{
     height: 20vh;
@@ -57,6 +51,11 @@ h1{
     text-shadow: 4px 4px saddlebrown;
     color: gold;
     font-size: 35px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 
 }
 h4{
@@ -78,6 +77,7 @@ h4{
 .StatsContainer, .col-sm-2{
     text-align: center;
     margin: auto;
+    width: 18vw;
 }
 
 .games-played, .attempts, .accuracy, .value {
@@ -137,7 +137,12 @@ button, html [type=button], [type=reset], [type=submit] {
 .game-area{
     display: flex;
     flex-wrap: wrap;
-    max-width: 122vh;
+    max-width: 118vh;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 /*--------------------*/
@@ -163,6 +168,7 @@ button, html [type=button], [type=reset], [type=submit] {
     /*position: absolute;*/
     left: 0;
     top: 0;
+    height: 100%;
     width: 100%;
     backface-visibility: hidden;
 }
@@ -172,6 +178,7 @@ button, html [type=button], [type=reset], [type=submit] {
     border-radius: 10px;
 }
 .front img, .back img {
+    height: 100%;
     width: 100%;
 }
 
@@ -179,11 +186,12 @@ button, html [type=button], [type=reset], [type=submit] {
 .back {
     position: absolute;
     z-index: 2;
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) translateZ(1px);
+    text-align: center;
 }
 
 .front {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-grab.png) 10 2, auto;
 }
 
@@ -192,8 +200,10 @@ img{
     /*height: 100%;*/
 }
 
+
+
 .reveal{
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
 }
 
 /*flip-container*/
@@ -272,11 +282,11 @@ img{
     .back {
         position: absolute;
         z-index: 2;
-        transform: rotateY(0deg);
+        transform: rotateY(0deg) translateZ(1px);
     }
 
     .front {
-        transform: rotateY(180deg);
+        transform: rotateY(180deg) translateZ(1px);
         cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-grab.png) 10 2, auto;
     }
 
@@ -286,7 +296,7 @@ img{
     }
 
     .reveal{
-        transform: rotateY(180deg);
+        transform: rotateY(180deg) translateZ(1px);
     }
 
     /*flip-container*/
@@ -375,11 +385,11 @@ img{
     .back {
         position: absolute;
         z-index: 2;
-        transform: rotateY(0deg);
+        transform: rotateY(0deg) translateZ(1px);
     }
 
     .front {
-        transform: rotateY(180deg);
+        transform: rotateY(180deg) translateZ(1px);
         cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/hearthstone-grab.png) 10 2, auto;
     }
 
@@ -389,7 +399,7 @@ img{
     }
 
     .reveal{
-        transform: rotateY(180deg);
+        transform: rotateY(180deg) translateZ(1px);
     }
 
     /*flip-container*/
@@ -471,6 +481,9 @@ img{
 }
 
 @media (max-width: 736px)  and (orientation: landscape){
+    .game-area{
+        margin: auto;
+    }
     .HeaderContainer {
         height: 16vh;
     }
@@ -513,13 +526,22 @@ img{
         font-size: 16px;
     }
     .label{
-        font-size: 16px;
+        font-size: 12px;
     }
     .value{
-        font-size: 30px;
+        font-size: 20px;
     }
     h1{
         height: 15vh;
+    }
+    .splashpagelogo{
+        width: 90vw;
+    }
+    .enter_link{
+        font-size: 45px;
+    }
+    button{
+        font-size: 10px;
     }
 }
 

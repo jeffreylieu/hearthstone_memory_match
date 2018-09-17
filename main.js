@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 1;
+var total_possible_matches = 3;
 var match_counter = 0;
 var firstImage = null;
 var secondImage = null;
@@ -56,7 +56,6 @@ function createGameArea(img){
             var frontImage = $("<img>").attr('src', allCards.pop());
             $(card).append(front, back);
             $(front).append(frontImage);
-            // $(back).append("<img src='cards/cardback.png'/>");
             $(back).append("<img src='cards/luxcard.gif' class='gameCards'/>");
             $('.game-area').append(card);
 
@@ -95,6 +94,7 @@ function card_clicked(){
                 games_played++;
                 $('.attempts .value').text(attempts);
                 showModal();
+                // put in new function to increase level by adding more cards
 
             } else {
                 console.log('They match!!');
@@ -104,9 +104,15 @@ function card_clicked(){
             }
         } else {
             cardsCanBeClicked = false;
+            // setTimeout(resetNonMatching, 2000);
+
+            //take off class on img gamecards
+            $('.gameCards').removeClass('gameCards');
             setTimeout(resetNonMatching, 2000);
             console.log('they do not match');
+
             attempts++;
+
 
         }
         displayStats();
@@ -134,14 +140,17 @@ function resetNonMatching(){
     first_card_clicked = null;
     second_card_clicked = null;
     cardsCanBeClicked = true;
+    //add gamecards back on
+    $('.back img').addClass('gameCards');
+
+
 }
 
 function totalReset(){
     console.log('reset working');
-
     $('.game-area').empty();
     createGameArea();
-    $(".card").click(card_clicked);
+    $('.card').click(card_clicked);
 }
 
 
@@ -186,9 +195,7 @@ function showModal(){
     displayStats();
     setTimeout(function () {
         $('.card').removeClass('reveal');
-
     }, 1500);
-
     setTimeout(resetWin, 2000);
 }
 
