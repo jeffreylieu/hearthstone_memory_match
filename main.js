@@ -106,7 +106,6 @@ function card_clicked(){
             cardsCanBeClicked = false;
             // setTimeout(resetNonMatching, 2000);
 
-            //take off class on img gamecards
             $('.gameCards').removeClass('gameCards');
             setTimeout(resetNonMatching, 2000);
             console.log('they do not match');
@@ -127,7 +126,7 @@ function resetWin(newcards) {
     first_card_clicked = null;
     second_card_clicked = null;
     cardsCanBeClicked = true;
-    reset_stats(); //calling before shufflecards is called
+    reset_stats();
     match_counter = 0;
     replaceImages(newcards);
     setTimeout(totalReset, 2000);
@@ -205,4 +204,3 @@ function removingModal(){
 
 
 
-// add level difficulty and challenges
