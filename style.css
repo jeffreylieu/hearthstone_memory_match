@@ -90,12 +90,8 @@ h4{
     font-family: 'Asul', sans-serif;
     text-shadow: 4px 4px saddlebrown;
     color: gold;
-    font-size: 25px;
+    font-size: 23px;
 }
-
-/*.reset{*/
-    /*color: black;*/
-/*}*/
 
 .w3-btn .reset{
     margin-bottom:10px;
@@ -158,14 +154,13 @@ button, html [type=button], [type=reset], [type=submit] {
 }
 .gameCards:hover{
     position: relative;
-    box-shadow: 0px -15px 20px 9px gold;
+    box-shadow: 0px -1px 20px 9px gold;
     border-radius: 10px;
 }
 
 /*--------------------*/
 
 .front, .back{
-    /*position: absolute;*/
     left: 0;
     top: 0;
     height: 100%;
@@ -174,7 +169,6 @@ button, html [type=button], [type=reset], [type=submit] {
 }
 .front img:hover{
     position: relative;
-    /*box-shadow: 0px -15px 20px 9px gold;*/
     border-radius: 10px;
 }
 .front img, .back img {
@@ -197,7 +191,6 @@ button, html [type=button], [type=reset], [type=submit] {
 
 img{
     vertical-align: middle;
-    /*height: 100%;*/
 }
 
 
@@ -224,8 +217,6 @@ img{
     justify-content: center;
     display: flex;
     height: 70%;
-    /*position: fixed;*/
-    /*transform: translate(-50%, -50%);*/
 }
 
 .center{
@@ -264,7 +255,6 @@ img{
     /*--------------------*/
 
     .front, .back{
-        /*position: absolute;*/
         left: 0;
         top: 0;
         width: 100%;
@@ -292,7 +282,6 @@ img{
 
     img{
         vertical-align: middle;
-        /*height: 100%;*/
     }
 
     .reveal{
@@ -345,10 +334,7 @@ img{
 }
 
 @media (max-width: 992px) and (orientation: landscape){
-    /*.gamebox{*/
-        /*display: flex;*/
-        /*flex-direction: row;*/
-    /*}*/
+    
     .card {
         margin: 1% 0.5%;
         display: flex;
@@ -366,7 +352,6 @@ img{
     /*--------------------*/
 
     .front, .back{
-        /*position: absolute;*/
         left: 0;
         top: 0;
         width: 100%;
@@ -395,7 +380,6 @@ img{
 
     img{
         vertical-align: middle;
-        /*height: 100%;*/
     }
 
     .reveal{
@@ -421,8 +405,6 @@ img{
         justify-content: center;
         display: flex;
         height: 70%;
-        /*position: fixed;*/
-        /*transform: translate(-50%, -50%);*/
     }
 
     .center{

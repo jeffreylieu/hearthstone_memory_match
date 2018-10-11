@@ -120,9 +120,7 @@ function card_clicked(){
 }
 
 function resetWin(newcards) {
-    // $('.card').removeClass('reveal');
     removingModal();
-   // $(second_card_clicked).find('.back').removeClass('reveal');
     first_card_clicked = null;
     second_card_clicked = null;
     cardsCanBeClicked = true;
